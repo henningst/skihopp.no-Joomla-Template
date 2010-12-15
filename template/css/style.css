@@ -221,13 +221,85 @@ button {  width: auto; overflow: visible; }
 
 
  /* Primary Styles
-    Author: 
+    Author: skihopp.no, henning@stoverud.no
  */
+body {
+	background-color: #FAFAFA;
+}
 
+ header {
+	background-color: #0A5DC9;
+	height: 100px;
+}
 
+#headerContent {
+	width: 980px;
+	margin-left: auto;
+	margin-right: auto;
+}
 
+#siteNav {
+	background-color: #0951B0;
+	border-top: 2px solid #0C5CC4;
+}
 
+#siteNavContent {
+	width: 980px;
+	height: 30px;
+	margin-left: auto;
+	margin-right: auto;
 
+	color: #FAFAFA;
+	font-size: 1.4em;
+	
+}
+
+#main {
+	
+}
+
+#mainContent {
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+	border-left: 1px solid #EEE;
+	border-right: 1px solid #EEE;
+	
+
+	padding: 10px;
+	
+	min-height: 600px;
+	background-color: #FFF;
+}
+
+#sidebar {
+	width: 200px;
+	float: right;
+}
+
+#sidebar .asideBox {
+	width: 190px;
+	border: 1px solid #EEE;
+	padding: 5px;
+	margin-bottom: 10px;
+	martin-right: 10px;
+}
+
+footer {
+	background-color: #DDD;
+	border-top: 3px solid #EEE;
+	
+}
+
+#footerContent {
+	width: 980px;
+	height: 130px;
+	margin-left: auto;
+	margin-right: auto;
+
+	
+	
+}
 
 
 

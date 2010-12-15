@@ -41,22 +41,55 @@
 
   <div id="container">
     <header>
-	skihopp.no header
+	
+	<div id="headerContent">
+	<h1>skihopp.no</h1>
+	
+	</div>
+	
     </header>
     
+	<nav id="siteNav">
+		<div id="siteNavContent">
+		Hjem | Nyheter | Resultater | Diskusjon | Om Sidene
+		</div>
+	</nav>
+	
     <div id="main">
 	
-	<?php ?>
+		<!-- BEGIN mainContent -->
+		<div id="mainContent">
+		Hei
 	
+	
+		<aside id="sidebar">
+		
+		<div id="asideContent">
+			<div id="articleLists" class="asideBox">
+			Box 1
+			</div>
+			
+			<div id="twitterFeeds" class="asideBox">
+			Box 2
+			</div>
+			
+			<div id="externalFeeds" class="asideBox">
+			Box 3
+			</div>
+		</div>
+		
+		</aside>
+	
+		</div>
+		<!-- END mainContent -->
 	
     </div>
     
-	<aside>
-	Dette er høyre kolonne
-	</aside>
 	
     <footer>
-	&copy; skihopp.no 2010
+		<div id="footerContent">
+		&copy; skihopp.no 2010
+		</div>
     </footer>
   </div> <!--! end of #container -->
 
