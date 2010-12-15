@@ -1,4 +1,11 @@
-﻿<!doctype html>  
+﻿<?php
+defined('_JEXEC') or die;
+
+
+/* The following line gets the application object for things like displaying the site name */
+$app = JFactory::getApplication();
+?>
+<!doctype html>  
 
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
@@ -7,6 +14,9 @@
 <!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <head>
+  <!-- The following JDOC Head tag loads all the header and meta information from your site config and content. -->
+  <jdoc:include type="head" />
+
   <meta charset="utf-8">
 
   <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
@@ -22,12 +32,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/favicon.ico">
+  <link rel="apple-touch-icon" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/apple-touch-icon.png">
 
 
   <!-- CSS : implied media="all" -->
-  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/style.css?v=2">
 
   <!-- Uncomment if you are specifically targeting less enabled mobile browsers
   <link rel="stylesheet" media="handheld" href="css/handheld.css?v=2">  -->
@@ -60,7 +70,54 @@
 		<!-- BEGIN mainContent -->
 		<div id="mainContent">
 		Hei
+
+	<?php if($this->countModules('skihopp-search')) : ?>
+		<div class="joomla-search span-7 last">
+			<jdoc:include type="modules" name="skihopp-search" style="none" />
+		</div>
+	<?php endif; ?>	
 	
+	
+	<?php if($this->countModules('skihopp-topmenu')) : ?>
+		<jdoc:include type="modules" name="skihopp-topmenu" style="container" />
+	<?php endif; ?>
+		
+	<?php if($this->countModules('skihopp-mainmenu')) : ?>
+		<jdoc:include type="modules" name="skihopp-mainmenu" style="container" />
+	<?php endif; ?>
+
+	<?php if($this->countModules('skihopp-breadcrumbs')) :?>
+		<div class="span-16 append-1">
+		<jdoc:include type="modules" name="skihopp-breadcrumbs" style="none" />
+		</div>
+	<?php endif; ?>	
+
+	
+	<?php if($this->countModules('skihopp-topquote')) : ?>
+		<jdoc:include type="modules" name="skihopp-topquote" style="none" />
+	<?php endif; ?>
+		<jdoc:include type="message" />
+		<jdoc:include type="component" />
+	<?php if($this->countModules('skihopp-bottomleft')) : ?>
+		<div class="span-7 colborder">
+			<jdoc:include type="modules" name="skihopp-bottomleft" style="bottommodule" />
+		</div>
+	<?php endif; ?>
+   
+	<?php if($this->countModules('skihopp-bottommiddle')) : ?>
+		<div class="span-7 last">
+			<jdoc:include type="modules" name="skihopp-bottommiddle" style="bottommodule" />
+		</div>
+	<?php endif; ?>
+	</div>
+	<?php if($this->countModules('skihopp-sidebar')) : ?>
+		<div class="span-7 last">
+			<jdoc:include type="modules" name="skihopp-sidebar" style="sidebar" />
+		</div>
+	<?php endif; ?>
+
+
+		
 	
 		<aside id="sidebar">
 		
@@ -88,7 +145,7 @@
 	
     <footer>
 		<div id="footerContent">
-		&copy; skihopp.no 2010
+		&copy;<?php echo date('Y'); ?> skihopp.no
 		</div>
     </footer>
   </div> <!--! end of #container -->
